@@ -142,5 +142,23 @@
     "image": "https://images.unsplash.com/photo-1616763355548-1b606f439fce?auto=format&fit=crop&w=500&q=80",
     "category": "Elektronika",
     "stock": 4
+  },
+  {
+    "id": "17",
+    "name": "DJI Mini 4 Pro",
+    "price": 759,
+    "description": "Yengil, ixcham va 4K formatda video oluvchi zamonaviy dron.",
+    "image": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=500&q=80",
+    "category": "Kameralar",
+    "stock": 14
+  },
+  {
+    "id": "18",
+    "name": "Samsung Odyssey G9 Monitor",
+    "price": 1499,
+    "description": "49 dyuymli, 240Hz kavisli super gaming monitor.",
+    "image": "https://images.unsplash.com/photo-1616763355548-1b606f439fce?auto=format&fit=crop&w=500&q=80",
+    "category": "Elektronika",
+    "stock": 4
   }
 ]
