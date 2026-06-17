@@ -140,7 +140,7 @@ export default function AdminPage() {
             <p className="text-gray-500">Do'kondagi barcha tovarlarni shu yerdan boshqaring.</p>
           </div>
           <div className="flex gap-3">
-            <Button size="large" danger className="rounded-lg font-medium" icon={<LogoutOutlined />} onClick={() => { document.cookie = "admin_auth=; path=/; max-age=0"; router.push('/admin/login'); }}>
+            <Button size="large" danger className="rounded-lg font-medium" icon={<LogoutOutlined />} onClick={() => { document.cookie = "admin_auth=; path=/; max-age=0"; window.location.href = '/admin/login'; }}>
               Chiqish
             </Button>
             <Button type="primary" size="large" className="rounded-lg shadow-md font-medium" icon={<PlusOutlined />} onClick={() => showModal()}>

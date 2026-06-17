@@ -15,7 +15,7 @@ export default function AdminLogin() {
       // Set cookie for 1 day
       document.cookie = "admin_auth=true; path=/; max-age=86400";
       message.success("Tizimga muvaffaqiyatli kirdingiz!");
-      router.push('/admin');
+      window.location.href = '/admin';
     } else {
       message.error("Login yoki parol noto'g'ri!");
       setLoading(false);
