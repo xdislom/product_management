@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Table, Button, Modal, Form, Input, InputNumber, Space, Popconfirm, Statistic, Row, Col, Card } from 'antd';
 import { EditOutlined, DeleteOutlined, PlusOutlined, DollarOutlined, AppstoreOutlined, ShoppingOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Product } from '@/types';
@@ -8,6 +8,16 @@ import { useRouter } from 'next/navigation';
 
 export default function AdminPage() {
   const router = useRouter();
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const isAuthenticated = document.cookie.includes('admin_auth=true');
+      if (!isAuthenticated) {
+        window.location.href = '/admin/login';
+      }
+    }
+  }, []);
+
   const { data: products = [], isLoading } = useProducts();
   const createProduct = useCreateProduct();
   const updateProduct = useUpdateProduct();
