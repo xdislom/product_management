@@ -1,11 +1,13 @@
 "use client";
 import { useState } from 'react';
 import { Table, Button, Modal, Form, Input, InputNumber, Space, Popconfirm, Statistic, Row, Col, Card } from 'antd';
-import { EditOutlined, DeleteOutlined, PlusOutlined, DollarOutlined, AppstoreOutlined, ShoppingOutlined } from '@ant-design/icons';
+import { EditOutlined, DeleteOutlined, PlusOutlined, DollarOutlined, AppstoreOutlined, ShoppingOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Product } from '@/types';
 import { useProducts, useCreateProduct, useUpdateProduct, useDeleteProduct } from '@/hooks/useProducts';
+import { useRouter } from 'next/navigation';
 
 export default function AdminPage() {
+  const router = useRouter();
   const { data: products = [], isLoading } = useProducts();
   const createProduct = useCreateProduct();
   const updateProduct = useUpdateProduct();
@@ -137,9 +139,14 @@ export default function AdminPage() {
             <h1 className="text-2xl font-bold text-gray-800">Mahsulotlarni Boshqarish</h1>
             <p className="text-gray-500">Do'kondagi barcha tovarlarni shu yerdan boshqaring.</p>
           </div>
-          <Button type="primary" size="large" className="rounded-lg shadow-md font-medium" icon={<PlusOutlined />} onClick={() => showModal()}>
-            Yangi Qo'shish
-          </Button>
+          <div className="flex gap-3">
+            <Button size="large" danger className="rounded-lg font-medium" icon={<LogoutOutlined />} onClick={() => { document.cookie = "admin_auth=; path=/; max-age=0"; router.push('/admin/login'); }}>
+              Chiqish
+            </Button>
+            <Button type="primary" size="large" className="rounded-lg shadow-md font-medium" icon={<PlusOutlined />} onClick={() => showModal()}>
+              Yangi Qo'shish
+            </Button>
+          </div>
         </div>
         
         <Table 
