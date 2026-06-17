@@ -36,9 +36,14 @@ export default function Home() {
             Eng sifatli elektronika, kiyim-kechak va maishiy texnikalarni arzon narxlarda xarid qiling. 
             Bugun buyurtma bering, O'zbekiston bo'ylab 24 soatda yetkazamiz.
           </p>
-          <Button type="primary" size="large" className="bg-white text-blue-700 hover:bg-gray-50 border-none font-bold px-10 h-14 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-lg">
-            Xaridni Boshlash
-          </Button>
+          <div className="flex justify-center gap-4">
+            <Button type="primary" size="large" className="bg-blue-500 hover:bg-blue-400 text-white border-none font-bold px-10 h-14 rounded-full shadow-lg transition-all hover:-translate-y-1 text-lg">
+              Xaridni Boshlash
+            </Button>
+            <Button size="large" href="/admin" className="bg-transparent text-white border border-white hover:text-blue-100 hover:border-blue-100 font-bold px-10 h-14 rounded-full transition-all hover:-translate-y-1 text-lg">
+              Admin kirish
+            </Button>
+          </div>
         </div>
       </div>
 
